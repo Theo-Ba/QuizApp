@@ -1,0 +1,82 @@
+[
+  {
+    "question": "Which of the following anime is part of the Big Three?",
+    "answer": 2,
+    "option1":"Dragon Ball Z",
+    "option2":"Bleach",
+    "option3":"Attack on Titan",
+    "option4":"Demon Slayer"
+  },
+  {
+    "question":"Which of the following is the highest rated anime?",
+    "answer": 1,
+    "option1":"Fullmetal Alchemist: Brotherhood",
+    "option2":"Attack on Titan",
+    "option3":"Steins;Gate",
+    "option4":"Kaguya-sama: Love is War"
+  },
+  {
+    "question":"Which of the following categories is targetted towards boys?",
+    "answer": 3,
+    "option1":"Seinen",
+    "option2":"Shoujo",
+    "option3":"Shounen",
+    "option4":"Anime"
+  },
+  {
+    "question":"Which of the following is known for memes, and has multiple parts?",
+    "answer": 4,
+    "option1":"One Piece",
+    "option2":"One Punch Man",
+    "option3":"Ghost Stories",
+    "option4":"Jojo's Bizarre Adventure"
+  },
+  {
+    "question":"Which of the following is known for it's toxic fanbase?",
+    "answer": 2,
+    "option1":"One Piece",
+    "option2":"My Hero Academia",
+    "option3":"Attack on Titan",
+    "option4":"Naruto"
+  },
+  {
+    "question":"Which of the following has the most episodes?",
+    "answer": 3,
+    "option1":"Dragon Ball Z",
+    "option2":"Naruto",
+    "option3":"One Piece",
+    "option4":"Bleach"
+  },
+  {
+    "question":"Which of the following is the most well known mecha anime?",
+    "answer": 2,
+    "option1":"Gundam Mobile",
+    "option2":"Neon Genesis Evangelion",
+    "option3":"Eighty-Six 86",
+    "option4":"Accel World"
+  },
+  {
+    "question":"Which of the following is an isekai",
+    "answer": 2,
+    "option1":"Goblin Slayer",
+    "option2":"Sword Art Online",
+    "option3":"One Punch Man",
+    "option4":"Jojo's Bizarre Adventure"
+  },
+  {
+    "question":"Which of the following is the most watched anime movie?",
+    "answer": 1,
+    "option1":"Demon Slayer: Mugen Train",
+    "option2":"Spirited Away",
+    "option3":"Jujutsu Kaisen: 0",
+    "option4":"Your Name"
+  },
+  {
+    "question":"Which of the following aired in the Summer 2022 anime season?",
+    "answer": 2,
+    "option1":"Jujutsu Kaisen",
+    "option2":"Lycoris Recoil",
+    "option3":"Kaguya-sama: Love is War season 3",
+    "option4":"Vinland Saga"
+  }
+]
