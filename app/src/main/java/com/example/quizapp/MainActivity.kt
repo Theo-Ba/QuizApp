@@ -3,6 +3,8 @@ package com.example.quizapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
+import android.widget.TextView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
@@ -11,6 +13,12 @@ class MainActivity : AppCompatActivity() {
     companion object {
         val TAG = "MainActivity"
     }
+
+    private lateinit var bo1: Button //buttonOption1
+    private lateinit var bo2: Button //buttonOption2
+    private lateinit var bo3: Button //buttonOption3
+    private lateinit var bo4: Button //buttonOption4
+    private lateinit var tvq: TextView //textViewQuestion
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +49,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun wireWidgets() {
-
+        bo1 = findViewById(R.id.button_main_option1)
+        bo2 = findViewById(R.id.button_main_option2)
+        bo3 = findViewById(R.id.button_main_option3)
+        bo4 = findViewById(R.id.button_main_option4)
+        tvq = findViewById(R.id.textView_main_question)
     }
 }
