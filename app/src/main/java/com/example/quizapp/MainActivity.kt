@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvq: TextView //textViewQuestion
     private lateinit var animeQuiz: Quiz
     private lateinit var background: ConstraintLayout
+    private lateinit var hintButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,25 +68,35 @@ class MainActivity : AppCompatActivity() {
         bo2.setTextColor(Color.WHITE)
         bo3.setTextColor(Color.WHITE)
         bo4.setTextColor(Color.WHITE)
+        hintButton.setBackgroundColor(Color.rgb(3, 89, 0))
+        hintButton.setTextColor(Color.WHITE)
         tvq.setTextColor(Color.WHITE)
+        hintButton.text = "Click for a hint"
     }
 
     private fun buttons() {
         bo1.setOnClickListener {
             animeQuiz.checkIfRight(1)
             animeQuiz.nextQuestion(bo1, bo2, bo3, bo4, tvq)
+            hintButton.text = "Click for a hint"
         }
         bo2.setOnClickListener {
             animeQuiz.checkIfRight(2)
             animeQuiz.nextQuestion(bo1, bo2, bo3, bo4, tvq)
+            hintButton.text = "Click for a hint"
         }
         bo3.setOnClickListener {
             animeQuiz.checkIfRight(3)
             animeQuiz.nextQuestion(bo1, bo2, bo3, bo4, tvq)
+            hintButton.text = "Click for a hint"
         }
         bo4.setOnClickListener {
             animeQuiz.checkIfRight(4)
             animeQuiz.nextQuestion(bo1, bo2, bo3, bo4, tvq)
+            hintButton.text = "Click for a hint"
+        }
+        hintButton.setOnClickListener {
+            hintButton.text = animeQuiz.questions[animeQuiz.questionOn].hint
         }
     }
 
@@ -96,5 +107,6 @@ class MainActivity : AppCompatActivity() {
         bo4 = findViewById(R.id.button_main_option4)
         tvq = findViewById(R.id.textView_main_question)
         background = findViewById(R.id.constraintLayount_main_background)
+        hintButton = findViewById(R.id.button_main_hint)
     }
 }

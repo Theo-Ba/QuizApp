@@ -5,7 +5,8 @@
     "option1":"Dragon Ball Z",
     "option2":"Bleach",
     "option3":"Attack on Titan",
-    "option4":"Demon Slayer"
+    "option4":"Demon Slayer",
+    "hint": "It's more discreet than the rest"
   },
   {
     "question":"Which of the following is the highest rated anime?",
@@ -13,7 +14,8 @@
     "option1":"Fullmetal Alchemist: Brotherhood",
     "option2":"Attack on Titan",
     "option3":"Steins;Gate",
-    "option4":"Kaguya-sama: Love is War"
+    "option4":"Kaguya-sama: Love is War",
+    "hint": "October 3rd"
   },
   {
     "question":"Which of the following categories is targetted towards boys?",
@@ -21,7 +23,8 @@
     "option1":"Seinen",
     "option2":"Shoujo",
     "option3":"Shounen",
-    "option4":"Anime"
+    "option4":"Anime",
+    "hint": "It translates to boy in japanese"
   },
   {
     "question":"Which of the following is known for memes, and has multiple parts?",
@@ -29,7 +32,8 @@
     "option1":"One Piece",
     "option2":"One Punch Man",
     "option3":"Ghost Stories",
-    "option4":"Jojo's Bizarre Adventure"
+    "option4":"Jojo's Bizarre Adventure",
+    "hint": "ZA WARUDO"
   },
   {
     "question":"Which of the following is known for it's toxic fanbase?",
@@ -37,7 +41,8 @@
     "option1":"One Piece",
     "option2":"My Hero Academia",
     "option3":"Attack on Titan",
-    "option4":"Naruto"
+    "option4":"Naruto",
+    "hint": "They sent the creator death threats when their favorite ship didn't happen"
   },
   {
     "question":"Which of the following has the most episodes?",
@@ -45,7 +50,8 @@
     "option1":"Dragon Ball Z",
     "option2":"Naruto",
     "option3":"One Piece",
-    "option4":"Bleach"
+    "option4":"Bleach",
+    "hint": "THE ________ IS REAL!"
   },
   {
     "question":"Which of the following is the most well known mecha anime?",
@@ -53,7 +59,8 @@
     "option1":"Gundam Mobile",
     "option2":"Neon Genesis Evangelion",
     "option3":"Eighty-Six 86",
-    "option4":"Accel World"
+    "option4":"Accel World",
+    "hint": "comas"
   },
   {
     "question":"Which of the following is an isekai",
@@ -61,7 +68,8 @@
     "option1":"Goblin Slayer",
     "option2":"Sword Art Online",
     "option3":"One Punch Man",
-    "option4":"Jojo's Bizarre Adventure"
+    "option4":"Jojo's Bizarre Adventure",
+    "hint": "Almost every isekai protagonist looks like the protagonist of this show"
   },
   {
     "question":"Which of the following is the most watched anime movie?",
@@ -69,7 +77,8 @@
     "option1":"Demon Slayer: Mugen Train",
     "option2":"Spirited Away",
     "option3":"Jujutsu Kaisen: 0",
-    "option4":"Your Name"
+    "option4":"Your Name",
+    "hint": "It also has an anime series"
   },
   {
     "question":"Which of the following aired in the Summer 2022 anime season?",
@@ -77,6 +86,7 @@
     "option1":"Jujutsu Kaisen",
     "option2":"Lycoris Recoil",
     "option3":"Kaguya-sama: Love is War season 3",
-    "option4":"Vinland Saga"
+    "option4":"Vinland Saga",
+    "hint": "A genuinely wholesome show with girls shooting guns"
   }
 ]
