@@ -30,6 +30,6 @@ data class Quiz(var totalQuestions: Int, val questions: List<Question>, var ques
         b1.text = "Amount correct: $amountCorrect"
         b2.text = "Amount wrong: $amountWrong"
         b3.text = "Percent correct: $percentCorrect"
-        b4.text = ""
+        b4.text = ":)"
     }
 }

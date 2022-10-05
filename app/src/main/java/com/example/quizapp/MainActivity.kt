@@ -1,10 +1,12 @@
 package com.example.quizapp
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
@@ -20,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var bo4: Button //buttonOption4
     private lateinit var tvq: TextView //textViewQuestion
     private lateinit var animeQuiz: Quiz
+    private lateinit var background: ConstraintLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,6 +54,20 @@ class MainActivity : AppCompatActivity() {
         animeQuiz.setQuestion(bo1, bo2, bo3, bo4, tvq)
         Log.d(TAG, "onCreate: $questions")
         buttons()
+        customize()
+    }
+
+    private fun customize() {
+        background.setBackgroundColor(Color.BLACK)
+        bo1.setBackgroundColor(Color.rgb(3, 89, 0))
+        bo2.setBackgroundColor(Color.rgb(3, 89, 0))
+        bo3.setBackgroundColor(Color.rgb(3, 89, 0))
+        bo4.setBackgroundColor(Color.rgb(3, 89, 0))
+        bo1.setTextColor(Color.WHITE)
+        bo2.setTextColor(Color.WHITE)
+        bo3.setTextColor(Color.WHITE)
+        bo4.setTextColor(Color.WHITE)
+        tvq.setTextColor(Color.WHITE)
     }
 
     private fun buttons() {
@@ -78,5 +95,6 @@ class MainActivity : AppCompatActivity() {
         bo3 = findViewById(R.id.button_main_option3)
         bo4 = findViewById(R.id.button_main_option4)
         tvq = findViewById(R.id.textView_main_question)
+        background = findViewById(R.id.constraintLayount_main_background)
     }
 }
