@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var bo3: Button //buttonOption3
     private lateinit var bo4: Button //buttonOption4
     private lateinit var tvq: TextView //textViewQuestion
+    private lateinit var animeQuiz: Quiz
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +47,29 @@ class MainActivity : AppCompatActivity() {
 
         val type = object : TypeToken<List<Question>>() { }.type
         val questions = gson.fromJson<List<Question>>(jsonString, type)
+        animeQuiz = Quiz(10, questions)
+        animeQuiz.setQuestion(bo1, bo2, bo3, bo4, tvq)
+        Log.d(TAG, "onCreate: $questions")
+        buttons()
+    }
+
+    private fun buttons() {
+        bo1.setOnClickListener {
+            animeQuiz.checkIfRight(1)
+            animeQuiz.nextQuestion(bo1, bo2, bo3, bo4, tvq)
+        }
+        bo2.setOnClickListener {
+            animeQuiz.checkIfRight(2)
+            animeQuiz.nextQuestion(bo1, bo2, bo3, bo4, tvq)
+        }
+        bo3.setOnClickListener {
+            animeQuiz.checkIfRight(3)
+            animeQuiz.nextQuestion(bo1, bo2, bo3, bo4, tvq)
+        }
+        bo4.setOnClickListener {
+            animeQuiz.checkIfRight(4)
+            animeQuiz.nextQuestion(bo1, bo2, bo3, bo4, tvq)
+        }
     }
 
     private fun wireWidgets() {
