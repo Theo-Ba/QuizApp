@@ -3,10 +3,12 @@ package com.example.quizapp
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.Group
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
@@ -24,6 +26,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var animeQuiz: Quiz
     private lateinit var background: ConstraintLayout
     private lateinit var hintButton: Button
+    private lateinit var questionGroup: Group
+    private lateinit var ifCorrectGroup: Group
+    private lateinit var ifCorrectText: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,28 +81,39 @@ class MainActivity : AppCompatActivity() {
 
     private fun buttons() {
         bo1.setOnClickListener {
-            animeQuiz.checkIfRight(1)
-            animeQuiz.nextQuestion(bo1, bo2, bo3, bo4, tvq)
+            animeQuiz.checkIfRight(1, questionGroup, ifCorrectGroup, ifCorrectText)
+            waitBeforeNext()
             hintButton.text = "Click for a hint"
         }
         bo2.setOnClickListener {
-            animeQuiz.checkIfRight(2)
-            animeQuiz.nextQuestion(bo1, bo2, bo3, bo4, tvq)
+            animeQuiz.checkIfRight(2, questionGroup, ifCorrectGroup, ifCorrectText)
+            waitBeforeNext()
             hintButton.text = "Click for a hint"
         }
         bo3.setOnClickListener {
-            animeQuiz.checkIfRight(3)
-            animeQuiz.nextQuestion(bo1, bo2, bo3, bo4, tvq)
+            animeQuiz.checkIfRight(3, questionGroup, ifCorrectGroup, ifCorrectText)
+            waitBeforeNext()
             hintButton.text = "Click for a hint"
         }
         bo4.setOnClickListener {
-            animeQuiz.checkIfRight(4)
-            animeQuiz.nextQuestion(bo1, bo2, bo3, bo4, tvq)
+            animeQuiz.checkIfRight(4, questionGroup, ifCorrectGroup, ifCorrectText)
+            waitBeforeNext()
             hintButton.text = "Click for a hint"
         }
         hintButton.setOnClickListener {
             hintButton.text = animeQuiz.questions[animeQuiz.questionOn].hint
         }
+    }
+
+    private fun waitBeforeNext() {
+        object : CountDownTimer(1000, 100) {
+
+            override fun onTick(millisUntilFinished: Long) { }
+
+            override fun onFinish() {
+                animeQuiz.nextQuestion(bo1, bo2, bo3, bo4, tvq, questionGroup, ifCorrectGroup)
+            }
+        }.start()
     }
 
     private fun wireWidgets() {
@@ -108,5 +124,8 @@ class MainActivity : AppCompatActivity() {
         tvq = findViewById(R.id.textView_main_question)
         background = findViewById(R.id.constraintLayount_main_background)
         hintButton = findViewById(R.id.button_main_hint)
+        questionGroup = findViewById(R.id.group_main_questions)
+        ifCorrectGroup = findViewById(R.id.group_main_showIfCorrect)
+        ifCorrectText = findViewById(R.id.textView_main_ifCorrect)
     }
 }
