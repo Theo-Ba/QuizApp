@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var questionGroup: Group
     private lateinit var ifCorrectGroup: Group
     private lateinit var ifCorrectText: TextView
+    private val hintText = getString(R.string.button_hint)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,29 +77,29 @@ class MainActivity : AppCompatActivity() {
         hintButton.setBackgroundColor(Color.rgb(3, 89, 0))
         hintButton.setTextColor(Color.WHITE)
         tvq.setTextColor(Color.WHITE)
-        hintButton.text = "Click for a hint"
+        hintButton.text = hintText
     }
 
     private fun buttons() {
         bo1.setOnClickListener {
             animeQuiz.checkIfRight(1, questionGroup, ifCorrectGroup, ifCorrectText)
             waitBeforeNext()
-            hintButton.text = "Click for a hint"
+            hintButton.text = hintText
         }
         bo2.setOnClickListener {
             animeQuiz.checkIfRight(2, questionGroup, ifCorrectGroup, ifCorrectText)
             waitBeforeNext()
-            hintButton.text = "Click for a hint"
+            hintButton.text = hintText
         }
         bo3.setOnClickListener {
             animeQuiz.checkIfRight(3, questionGroup, ifCorrectGroup, ifCorrectText)
             waitBeforeNext()
-            hintButton.text = "Click for a hint"
+            hintButton.text = hintText
         }
         bo4.setOnClickListener {
             animeQuiz.checkIfRight(4, questionGroup, ifCorrectGroup, ifCorrectText)
             waitBeforeNext()
-            hintButton.text = "Click for a hint"
+            hintButton.text = hintText
         }
         hintButton.setOnClickListener {
             hintButton.text = animeQuiz.questions[animeQuiz.questionOn].hint

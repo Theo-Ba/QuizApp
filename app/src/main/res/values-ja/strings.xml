@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Quiz App</string>
+    <string name="button1">ボタン</string>
+    <string name="button1">" ボタン"</string>
+    <string name="button2">ボタン</string>
+    <string name="button2">ボタン</string>
+    <string name="button3">ボタン</string>
+    <string name="button3">ボタン</string>
+    <string name="button4">ボタン</string>
+    <string name="button4">ボタン</string>
+    <string name="button_hint">クリックしてヒントを見る</string>
+    <string name="textview_question">テキストビュー</string>
+    <string name="textview_check">テキストビュー</string>
+</resources>

@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Quiz App</string>
+    <string name="button1">Button</string>
+    <string name="button2">Button</string>
+    <string name="button3">Button</string>
+    <string name="button4">Button</string>
+    <string name="button_hint">Click for a hint</string>
+    <string name="textview_question">TextView</string>
+    <string name="textview_check">TextView</string>
 </resources>
