@@ -7,4 +7,10 @@
     <string name="button_hint">Click for a hint</string>
     <string name="textview_question">TextView</string>
     <string name="textview_check">TextView</string>
+    <string name="correctMessage">Correct!</string>
+    <string name="falseMessage">False!</string>
+    <string name="closeInstructions">press a button to close app</string>
+    <string name="amountCorrect">Amount correct: </string>
+    <string name="amount_wrong">Amount wrong: </string>
+    <string name="percentCorrect">Percent correct: </string>
 </resources>

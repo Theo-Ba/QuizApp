@@ -13,7 +13,7 @@ data class Quiz(var totalQuestions: Int, val questions: List<Question>, var ques
         qg.isGone = false
         icg.isGone = true
         if(questionOn >= totalQuestions)
-            finalScreen(b1, b2, b3, b4, t)
+            finalScreen(b1, b2, b3, b4, t) //add the params here
         else
             setQuestion(b1, b2, b3, b4, t)
     }
@@ -24,27 +24,27 @@ data class Quiz(var totalQuestions: Int, val questions: List<Question>, var ques
         b4.text = questions[questionOn].option4
         t.text = questions[questionOn].question
     }
-    public fun checkIfRight(optionSelected: Int, qg: Group, icg: Group, ict: TextView){
+    public fun checkIfRight(optionSelected: Int, qg: Group, icg: Group, ict: TextView, qCorrect: String, qFalse: String){
         qg.isGone = true
         icg.isGone = false
         if(optionSelected == questions[questionOn].answer) {
             amountCorrect++
             ict.setTextColor(Color.rgb(3, 89, 0))
-            ict.text = "Correct!"
+            ict.text = qCorrect
         }
         else {
             amountWrong++
             ict.setTextColor(Color.RED)
-            ict.text = "False"
+            ict.text = qFalse
         }
         questionOn++
     }
-    public fun finalScreen(b1: Button, b2: Button, b3: Button, b4: Button, t: TextView) {
+    public fun finalScreen(b1: Button, b2: Button, b3: Button, b4: Button, t: TextView, tText: String, aCorrectText: String, aWrongText: String, pCorrectText: String) {
         val percentCorrect = (amountCorrect*100)/totalQuestions
-        t.text = "press a button to close app"
-        b1.text = "Amount correct: $amountCorrect"
-        b2.text = "Amount wrong: $amountWrong"
-        b3.text = "Percent correct: $percentCorrect"
+        t.text = tText
+        b1.text = aCorrectText + amountCorrect
+        b2.text = aWrongText + amountWrong
+        b3.text = pCorrectText + percentCorrect
         b4.text = ":)"
     }
 }

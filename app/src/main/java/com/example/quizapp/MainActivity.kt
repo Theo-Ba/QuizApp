@@ -30,6 +30,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var ifCorrectGroup: Group
     private lateinit var ifCorrectText: TextView
     private val hintText = getString(R.string.button_hint)
+    private val correctText = getString(R.string.correctMessage)
+    private val falseText = getString(R.string.falseMessage)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -82,22 +84,22 @@ class MainActivity : AppCompatActivity() {
 
     private fun buttons() {
         bo1.setOnClickListener {
-            animeQuiz.checkIfRight(1, questionGroup, ifCorrectGroup, ifCorrectText)
+            animeQuiz.checkIfRight(1, questionGroup, ifCorrectGroup, ifCorrectText, correctText, falseText)
             waitBeforeNext()
             hintButton.text = hintText
         }
         bo2.setOnClickListener {
-            animeQuiz.checkIfRight(2, questionGroup, ifCorrectGroup, ifCorrectText)
+            animeQuiz.checkIfRight(2, questionGroup, ifCorrectGroup, ifCorrectText, correctText, falseText)
             waitBeforeNext()
             hintButton.text = hintText
         }
         bo3.setOnClickListener {
-            animeQuiz.checkIfRight(3, questionGroup, ifCorrectGroup, ifCorrectText)
+            animeQuiz.checkIfRight(3, questionGroup, ifCorrectGroup, ifCorrectText, correctText, falseText)
             waitBeforeNext()
             hintButton.text = hintText
         }
         bo4.setOnClickListener {
-            animeQuiz.checkIfRight(4, questionGroup, ifCorrectGroup, ifCorrectText)
+            animeQuiz.checkIfRight(4, questionGroup, ifCorrectGroup, ifCorrectText, correctText, falseText)
             waitBeforeNext()
             hintButton.text = hintText
         }

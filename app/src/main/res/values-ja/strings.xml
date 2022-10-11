@@ -12,4 +12,11 @@
     <string name="button_hint">クリックしてヒントを見る</string>
     <string name="textview_question">テキストビュー</string>
     <string name="textview_check">テキストビュー</string>
+    <string name="correctMessage">正しい!</string>
+    <string name="falseMessage">間違い!</string>
+    <string name="falseMessage">" 間違い！"</string>
+    <string name="closeInstructions">ボタンを押してアプリを閉じます</string>
+    <string name="amountCorrect">"正しい金額: "</string>
+    <string name="amount_wrong">間違った金額:</string>
+    <string name="percentCorrect">"正解率: "</string>
 </resources>
