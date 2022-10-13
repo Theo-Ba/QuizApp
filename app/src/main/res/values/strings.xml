@@ -13,4 +13,6 @@
     <string name="amountCorrect">Amount correct: </string>
     <string name="amount_wrong">Amount wrong: </string>
     <string name="percentCorrect">Percent correct: </string>
+    <string name="title_text">Anime Quiz</string>
+    <string name="start">Start</string>
 </resources>

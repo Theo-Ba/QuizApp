@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.Group
+import androidx.core.view.isGone
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var hintButton: Button
     private lateinit var questionGroup: Group
     private lateinit var ifCorrectGroup: Group
+    private lateinit var titleGroup: Group
     private lateinit var ifCorrectText: TextView
     private lateinit var hintText: String
     private lateinit var correctText: String
@@ -36,6 +38,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var amountCorrect: String
     private lateinit var amountWrong: String
     private lateinit var percentCorrect: String
+    private lateinit var startButton: Button
+    private lateinit var titleText: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -84,6 +88,9 @@ class MainActivity : AppCompatActivity() {
         hintButton.setTextColor(Color.WHITE)
         tvq.setTextColor(Color.WHITE)
         hintButton.text = hintText
+        titleText.setTextColor(Color.WHITE)
+        startButton.setBackgroundColor(Color.rgb(3, 89, 0))
+        startButton.setTextColor(Color.WHITE)
     }
 
     private fun buttons() {
@@ -109,6 +116,10 @@ class MainActivity : AppCompatActivity() {
         }
         hintButton.setOnClickListener {
             hintButton.text = animeQuiz.questions[animeQuiz.questionOn].hint
+        }
+        startButton.setOnClickListener {
+            titleGroup.isGone = true
+            questionGroup.isGone = false
         }
     }
 
@@ -141,5 +152,8 @@ class MainActivity : AppCompatActivity() {
         amountCorrect = getString(R.string.amountCorrect)
         amountWrong = getString(R.string.amount_wrong)
         percentCorrect = getString(R.string.percentCorrect)
+        titleText = findViewById(R.id.textView_main_titleText)
+        titleGroup = findViewById(R.id.group_main_titleScreen)
+        startButton = findViewById(R.id.button_main_start)
     }
 }

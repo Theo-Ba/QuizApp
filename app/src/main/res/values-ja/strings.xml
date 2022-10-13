@@ -14,4 +14,6 @@
     <string name="amountCorrect">正しい金額: </string>
     <string name="amount_wrong">間違った金額:</string>
     <string name="percentCorrect">正解率: </string>
+    <string name="title_text">アニメクイズ</string>
+    <string name="start">始める</string>
 </resources>
