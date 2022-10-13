@@ -9,11 +9,11 @@ import androidx.core.view.isGone
 import androidx.core.view.isVisible
 
 data class Quiz(var totalQuestions: Int, val questions: List<Question>, var questionOn: Int = 0, var amountCorrect: Int = 0, var amountWrong: Int = 0) {
-    public fun nextQuestion(b1: Button, b2: Button, b3: Button, b4: Button, t: TextView, qg: Group, icg: Group) {
+    public fun nextQuestion(b1: Button, b2: Button, b3: Button, b4: Button, t: TextView, qg: Group, icg: Group,tText: String, aCorrectText: String, aWrongText: String, pCorrectText: String) {
         qg.isGone = false
         icg.isGone = true
         if(questionOn >= totalQuestions)
-            finalScreen(b1, b2, b3, b4, t) //add the params here
+            finalScreen(b1, b2, b3, b4, t, tText, aCorrectText, aWrongText, pCorrectText) //add the params here
         else
             setQuestion(b1, b2, b3, b4, t)
     }

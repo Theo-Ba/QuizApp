@@ -32,6 +32,10 @@ class MainActivity : AppCompatActivity() {
     private val hintText = getString(R.string.button_hint)
     private val correctText = getString(R.string.correctMessage)
     private val falseText = getString(R.string.falseMessage)
+    private val closeInstructions = getString(R.string.closeInstructions)
+    private val amountCorrect = getString(R.string.amountCorrect)
+    private val amountWrong = getString(R.string.amount_wrong)
+    private val percentCorrect = getString(R.string.percentCorrect)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -114,7 +118,7 @@ class MainActivity : AppCompatActivity() {
             override fun onTick(millisUntilFinished: Long) { }
 
             override fun onFinish() {
-                animeQuiz.nextQuestion(bo1, bo2, bo3, bo4, tvq, questionGroup, ifCorrectGroup)
+                animeQuiz.nextQuestion(bo1, bo2, bo3, bo4, tvq, questionGroup, ifCorrectGroup, closeInstructions, amountCorrect, amountWrong, percentCorrect)
             }
         }.start()
     }
