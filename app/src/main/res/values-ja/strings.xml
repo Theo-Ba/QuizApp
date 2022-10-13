@@ -16,4 +16,5 @@
     <string name="percentCorrect">正解率: </string>
     <string name="title_text">アニメクイズ</string>
     <string name="start">始める</string>
+    <string name="dark_mode">ダークモード</string>
 </resources>

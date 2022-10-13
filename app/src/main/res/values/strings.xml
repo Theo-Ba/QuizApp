@@ -15,4 +15,5 @@
     <string name="percentCorrect">Percent correct: </string>
     <string name="title_text">Anime Quiz</string>
     <string name="start">Start</string>
+    <string name="dark_mode">Dark Mode</string>
 </resources>

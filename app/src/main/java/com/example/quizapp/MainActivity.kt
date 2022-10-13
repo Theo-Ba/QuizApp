@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
 import android.widget.Button
+import android.widget.Switch
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.Group
@@ -40,6 +41,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var percentCorrect: String
     private lateinit var startButton: Button
     private lateinit var titleText: TextView
+    private lateinit var darkModeSwitch: Switch
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,26 +73,47 @@ class MainActivity : AppCompatActivity() {
         animeQuiz.setQuestion(bo1, bo2, bo3, bo4, tvq)
         Log.d(TAG, "onCreate: $questions")
         buttons()
-        customize()
+        customize(false)
     }
 
-    private fun customize() {
-        background.setBackgroundColor(Color.BLACK)
-        bo1.setBackgroundColor(Color.rgb(3, 89, 0))
-        bo2.setBackgroundColor(Color.rgb(3, 89, 0))
-        bo3.setBackgroundColor(Color.rgb(3, 89, 0))
-        bo4.setBackgroundColor(Color.rgb(3, 89, 0))
-        bo1.setTextColor(Color.WHITE)
-        bo2.setTextColor(Color.WHITE)
-        bo3.setTextColor(Color.WHITE)
-        bo4.setTextColor(Color.WHITE)
-        hintButton.setBackgroundColor(Color.rgb(3, 89, 0))
-        hintButton.setTextColor(Color.WHITE)
-        tvq.setTextColor(Color.WHITE)
+    private fun customize(dM: Boolean) {
         hintButton.text = hintText
-        titleText.setTextColor(Color.WHITE)
-        startButton.setBackgroundColor(Color.rgb(3, 89, 0))
-        startButton.setTextColor(Color.WHITE)
+        if(dM) {
+            background.setBackgroundColor(Color.BLACK)
+            bo1.setTextColor(Color.WHITE)
+            bo2.setTextColor(Color.WHITE)
+            bo3.setTextColor(Color.WHITE)
+            bo4.setTextColor(Color.WHITE)
+            hintButton.setTextColor(Color.WHITE)
+            tvq.setTextColor(Color.WHITE)
+            titleText.setTextColor(Color.WHITE)
+            startButton.setTextColor(Color.WHITE)
+            darkModeSwitch.setTextColor(Color.WHITE)
+            bo1.setBackgroundColor(Color.rgb(3, 89, 0))
+            bo2.setBackgroundColor(Color.rgb(3, 89, 0))
+            bo3.setBackgroundColor(Color.rgb(3, 89, 0))
+            bo4.setBackgroundColor(Color.rgb(3, 89, 0))
+            hintButton.setBackgroundColor(Color.rgb(3, 89, 0))
+            startButton.setBackgroundColor(Color.rgb(3, 89, 0))
+        }
+        if(!dM) {
+            background.setBackgroundColor(Color.WHITE)
+            bo1.setTextColor(Color.BLACK)
+            bo2.setTextColor(Color.BLACK)
+            bo3.setTextColor(Color.BLACK)
+            bo4.setTextColor(Color.BLACK)
+            hintButton.setTextColor(Color.BLACK)
+            tvq.setTextColor(Color.BLACK)
+            titleText.setTextColor(Color.BLACK)
+            startButton.setTextColor(Color.BLACK)
+            darkModeSwitch.setTextColor(Color.BLACK)
+            bo1.setBackgroundColor(Color.rgb(6, 191, 0))
+            bo2.setBackgroundColor(Color.rgb(6, 191, 0))
+            bo3.setBackgroundColor(Color.rgb(6, 191, 0))
+            bo4.setBackgroundColor(Color.rgb(6, 191, 0))
+            hintButton.setBackgroundColor(Color.rgb(6, 191, 0))
+            startButton.setBackgroundColor(Color.rgb(6, 191, 0))
+        }
     }
 
     private fun buttons() {
@@ -120,6 +143,9 @@ class MainActivity : AppCompatActivity() {
         startButton.setOnClickListener {
             titleGroup.isGone = true
             questionGroup.isGone = false
+        }
+        darkModeSwitch.setOnCheckedChangeListener { compoundButton, b ->
+            customize(b)
         }
     }
 
@@ -155,5 +181,6 @@ class MainActivity : AppCompatActivity() {
         titleText = findViewById(R.id.textView_main_titleText)
         titleGroup = findViewById(R.id.group_main_titleScreen)
         startButton = findViewById(R.id.button_main_start)
+        darkModeSwitch = findViewById(R.id.switch_main_darkMode)
     }
 }

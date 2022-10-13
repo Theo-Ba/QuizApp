@@ -121,9 +121,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Switch
+        android:id="@+id/switch_main_darkMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dark_mode"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_main_start" />
+
     <androidx.constraintlayout.widget.Group
         android:id="@+id/group_main_titleScreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="textView_main_titleText,button_main_start" />
+        app:constraint_referenced_ids="textView_main_titleText,button_main_start,switch_main_darkMode" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
