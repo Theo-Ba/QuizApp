@@ -29,13 +29,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var questionGroup: Group
     private lateinit var ifCorrectGroup: Group
     private lateinit var ifCorrectText: TextView
-    private val hintText = getString(R.string.button_hint)
-    private val correctText = getString(R.string.correctMessage)
-    private val falseText = getString(R.string.falseMessage)
-    private val closeInstructions = getString(R.string.closeInstructions)
-    private val amountCorrect = getString(R.string.amountCorrect)
-    private val amountWrong = getString(R.string.amount_wrong)
-    private val percentCorrect = getString(R.string.percentCorrect)
+    private lateinit var hintText: String
+    private lateinit var correctText: String
+    private lateinit var falseText: String
+    private lateinit var closeInstructions: String
+    private lateinit var amountCorrect: String
+    private lateinit var amountWrong: String
+    private lateinit var percentCorrect: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -134,5 +134,12 @@ class MainActivity : AppCompatActivity() {
         questionGroup = findViewById(R.id.group_main_questions)
         ifCorrectGroup = findViewById(R.id.group_main_showIfCorrect)
         ifCorrectText = findViewById(R.id.textView_main_ifCorrect)
+        hintText = getString(R.string.button_hint)
+        correctText = getString(R.string.correctMessage)
+        falseText = getString(R.string.falseMessage)
+        closeInstructions = getString(R.string.closeInstructions)
+        amountCorrect = getString(R.string.amountCorrect)
+        amountWrong = getString(R.string.amount_wrong)
+        percentCorrect = getString(R.string.percentCorrect)
     }
 }
