@@ -1,5 +1,6 @@
 package com.example.quizapp
 
+import android.content.res.Resources
 import android.graphics.Color
 import android.webkit.RenderProcessGoneDetail
 import android.widget.Button

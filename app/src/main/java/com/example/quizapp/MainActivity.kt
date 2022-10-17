@@ -18,6 +18,11 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         val TAG = "MainActivity"
+        val CURRENT_QUESTION = "current question"
+        val AMOUNT_RIGHT = "amount right"
+        val AMOUNT_WRONG = "amount wrong"
+        val TITLE_GROUP_VIS = "visibility of title"
+        val DARK_MODE = "dark mode on"
     }
 
     private lateinit var bo1: Button //buttonOption1
@@ -42,6 +47,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var startButton: Button
     private lateinit var titleText: TextView
     private lateinit var darkModeSwitch: Switch
+    private var darkModeOn = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,6 +80,18 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "onCreate: $questions")
         buttons()
         customize(false)
+        if(savedInstanceState != null) {
+            animeQuiz.questionOn = savedInstanceState.getInt(CURRENT_QUESTION)
+            animeQuiz.amountCorrect = savedInstanceState.getInt(AMOUNT_RIGHT)
+            animeQuiz.amountWrong = savedInstanceState.getInt(AMOUNT_WRONG)
+            titleGroup.isGone = savedInstanceState.getBoolean(TITLE_GROUP_VIS)
+            darkModeOn = savedInstanceState.getBoolean(DARK_MODE)
+            customize(darkModeOn)
+            if(titleGroup.isGone) {
+                questionGroup.isGone = false
+                animeQuiz.nextQuestion(bo1, bo2, bo3, bo4, tvq, questionGroup, ifCorrectGroup, closeInstructions, amountCorrect, amountWrong, percentCorrect)
+            }
+        }
     }
 
     private fun customize(dM: Boolean) {
@@ -146,6 +164,7 @@ class MainActivity : AppCompatActivity() {
         }
         darkModeSwitch.setOnCheckedChangeListener { compoundButton, b ->
             customize(b)
+            darkModeOn = !darkModeOn
         }
     }
 
@@ -182,5 +201,14 @@ class MainActivity : AppCompatActivity() {
         titleGroup = findViewById(R.id.group_main_titleScreen)
         startButton = findViewById(R.id.button_main_start)
         darkModeSwitch = findViewById(R.id.switch_main_darkMode)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putInt(CURRENT_QUESTION, animeQuiz.questionOn)
+        outState.putInt(AMOUNT_RIGHT, animeQuiz.amountCorrect)
+        outState.putInt(AMOUNT_WRONG, animeQuiz.amountWrong)
+        outState.putBoolean(TITLE_GROUP_VIS, titleGroup.isGone)
+        outState.putBoolean(DARK_MODE, darkModeOn)
+        super.onSaveInstanceState(outState)
     }
 }
